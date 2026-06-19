@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════
+   Fixed Sidebar · Navy Dark + Light Mode
+   Accent: low-saturation mint cyan
+   ═══════════════════════════════════════════════ */
+
+:root {
+  --sidebar-bg:  #0b1121;
+  --main-bg:     #111827;
+  --text:        #f1f5f9;
+  --text-dim:    #cbd5e1;
+  --text-muted:  #64748b;
+  --accent:      #2dd4bf;
+  --accent-soft: rgb(45 212 191 / .1);
+  --highlight:   rgb(45 212 191 / .15);
+  --border:      rgb(255 255 255 / .06);
+  --card:        rgb(255 255 255 / .03);
+}
+
+.light {
+  --sidebar-bg:  #f8fafc;
+  --main-bg:     #ffffff;
+  --text:        #0f172a;
+  --text-dim:    #334155;
+  --text-muted:  #94a3b8;
+  --accent:      #0d9488;
+  --accent-soft: rgb(13 148 136 / .08);
+  --highlight:   rgb(13 148 136 / .12);
+  --border:      #e2e8f0;
+  --card:        #f8fafc;
+}
+
+@theme inline {
+  --color-sidebar: var(--sidebar-bg);
+  --color-main:   var(--main-bg);
+  --color-text:   var(--text);
+  --color-text-dim: var(--text-dim);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-highlight: var(--highlight);
+  --color-border: var(--border);
+  --color-card:  var(--card);
+  --font-sans: var(--font-geist-sans), "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), "Cascadia Code", "JetBrains Mono", monospace;
+}
+
+body {
+  background: var(--main-bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--highlight); color: var(--accent); }
+
+@media print {
+  :root { --sidebar-bg: #fff; --main-bg: #fff; --text: #111; --text-dim: #555; --text-muted: #999; --accent: #0d9488; --accent-soft: #f0fdfa; --highlight: #ccfbf1; --border: #e5e7eb; --card: #f9fafb; }
+  @page { size: A4; margin: 14mm 16mm; }
+}
